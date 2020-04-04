@@ -43,6 +43,18 @@ const getWithAuth = url => {
   });
 };
 
+const patchWithAuth = (url, obj) => {
+    return fetch(url, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${localStorage.token}`
+      },
+      body: JSON.stringify(obj)
+    });
+  };
+
 const newUserSignUp = userSignupObject => {
   return postSimple(URL_userSignup, userSignupObject).then(response =>
     response.json()
@@ -65,13 +77,19 @@ const UserSignIn = userSignInObject => {
 
 const getAllBooks = userId => {
   const url = `${PART1_URL_Books}${userId}${PART2_URL_Books}`;
-  console.log('url IS: ',url)
+  console.log("url IS: ", url);
   return getWithAuth(url).then(response => response.json());
+};
+
+const patchBook = (userId, bookId, patchObj) => {
+  const url = `${PART1_URL_Books}${userId}${PART2_URL_Books}/${bookId}`;
+  return patchWithAuth(url,patchObj)
 };
 
 export default {
   UserSignIn,
-  getAllBooks
+  getAllBooks,
+  patchBook
   //   newUserSignUp,
   //   getCurrentPanicStatus,
   //   postNewPanicStatus

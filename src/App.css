@@ -191,11 +191,28 @@ body {
 .mainpage-container{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   /* border: 1px solid black; */
   background-color: rgb(199, 230, 203) ;
   height: 100%;
+}
+
+.mainpage-listbooks-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.book-div {
+  display: flex;
+  flex-direction: row;
+  width: 33%;
+}
+
+.book-cover {
+  display: flex;
+  width: 40%;
 }
 
 .showpage-container{

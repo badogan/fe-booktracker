@@ -12,7 +12,8 @@ import Header from "./components/Header";
 
 const defaultState = {
   user: null,
-  books: null
+  books: null,
+  showBook: null
 };
 
 class App extends React.Component {
@@ -39,9 +40,14 @@ class App extends React.Component {
   };
 
   handleLogout = () => {
-    localStorage.removeItem('token')
-    this.setState({...defaultState})
-    this.props.history.push("/")
+    localStorage.removeItem("token");
+    this.setState({ ...defaultState });
+    this.props.history.push("/");
+  };
+
+  handleShowBook = (showBook) => {
+    this.setState({showBook})
+    this.props.history.push("/show")
   }
 
   render() {
@@ -73,14 +79,15 @@ class App extends React.Component {
             exact
             path="/main"
             render={routerProps => {
-              return <MainPage {...routerProps} books={this.state.books}/>;
+              return <MainPage {...routerProps} books={this.state.books}
+              handleShowBook={this.handleShowBook} />;
             }}
           />
           <Route
             exact
             path="/show"
             render={routerProps => {
-              return <ShowPage {...routerProps} user={this.state.user} />;
+              return <ShowPage {...routerProps} book={this.state.showBook} user={this.state.user}/>;
             }}
           />
         </div>
