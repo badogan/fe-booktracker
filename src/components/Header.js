@@ -6,7 +6,7 @@ export default class Header extends React.Component {
       <div className="App">
         <div className="header wrapper">
           <div className="logo">
-            <h5>Book_Tracker</h5>
+            <h5>I want my book back</h5>
           </div>
             {this.props.user && <button
               className="header-logout-button"
