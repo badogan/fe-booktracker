@@ -1,5 +1,6 @@
 import React from "react";
 import LendBook from '../components/LendBook'
+import ReturnBook from '../components/ReturnBook'
 
 export default class ShowPage extends React.Component {
   render() {
@@ -14,7 +15,7 @@ export default class ShowPage extends React.Component {
         <h4>{title}</h4>
         <h3>{_id}</h3>
 
-        {this.props.book.lentTo ? null : <LendBook user={this.props.user} book={this.props.book}/>}
+        {this.props.book.lentTo ? <ReturnBook user={this.props.user} book={this.props.book} updateUser={this.props.updateUser}/> : <LendBook user={this.props.user} book={this.props.book} updateUser={this.props.updateUser}/>}
 
         <button onClick={()=>this.props.history.push("/main")}>Go to Main</button>
       </div>

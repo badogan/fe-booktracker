@@ -87,7 +87,7 @@ class App extends React.Component {
             exact
             path="/show"
             render={routerProps => {
-              return <ShowPage {...routerProps} book={this.state.showBook} user={this.state.user}/>;
+              return <ShowPage {...routerProps} book={this.state.showBook} user={this.state.user} updateUser={this.updateUser}/>;
             }}
           />
         </div>

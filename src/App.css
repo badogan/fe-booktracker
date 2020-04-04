@@ -207,12 +207,23 @@ body {
 .book-div {
   display: flex;
   flex-direction: row;
-  width: 33%;
+  justify-content: space-around;
+  width: 50%;
+  border: 1px solid black;
+
 }
 
 .book-cover {
   display: flex;
-  width: 40%;
+  width: 10%;
+}
+
+.book-div-title{
+display:flex;
+}
+
+.book-div-title{
+  display:flex;
 }
 
 .showpage-container{
