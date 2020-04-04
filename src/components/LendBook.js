@@ -14,7 +14,7 @@ export default class LendBook extends React.Component {
       lentTo: this.state.lentTo
     }).then(data => {
       if (data.status === 200) {
-        this.props.updateUser(this.props.user);
+        this.props.updateUser(this.props.user)
       }
     });
   };

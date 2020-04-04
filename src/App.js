@@ -45,10 +45,10 @@ class App extends React.Component {
     this.props.history.push("/");
   };
 
-  handleShowBook = (showBook) => {
-    this.setState({showBook})
-    this.props.history.push("/show")
-  }
+  handleShowBook = showBook => {
+    this.setState({ showBook });
+    this.props.history.push("/show");
+  };
 
   render() {
     return (
@@ -79,15 +79,29 @@ class App extends React.Component {
             exact
             path="/main"
             render={routerProps => {
-              return <MainPage {...routerProps} books={this.state.books}
-              handleShowBook={this.handleShowBook} />;
+              return (
+                <MainPage
+                  {...routerProps}
+                  books={this.state.books}
+                  handleShowBook={this.handleShowBook}
+                  user={this.state.user}
+                  getAllBooks={this.getAllBooks}
+                />
+              );
             }}
           />
           <Route
             exact
             path="/show"
             render={routerProps => {
-              return <ShowPage {...routerProps} book={this.state.showBook} user={this.state.user} updateUser={this.updateUser}/>;
+              return (
+                <ShowPage
+                  {...routerProps}
+                  book={this.state.showBook}
+                  user={this.state.user}
+                  updateUser={this.updateUser}
+                />
+              );
             }}
           />
         </div>

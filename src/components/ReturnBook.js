@@ -6,8 +6,9 @@ const ReturnBook = props => {
     API.patchBook(props.user._id, props.book._id, {
       lentTo: null
     }).then(data => {
+      console.log('returned data NOW IS: ',data)
       if (data.status === 200) {
-        props.updateUser(props.user);
+        props.updateUser(props.user)
       }
     });
   };
