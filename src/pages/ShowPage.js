@@ -18,7 +18,7 @@ export default class ShowPage extends React.Component {
 
     return (
       <div className="showpage-container wrapper">
-        {console.log("This is Show page")}
+        {/* {console.log("This is Show page")} */}
         <img className="book-cover" src={coverURL} alt={title}></img>
         {this.props.book.lentTo ? (
           <h2>Lent to: {this.props.book.lentTo}</h2>

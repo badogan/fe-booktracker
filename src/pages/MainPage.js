@@ -17,7 +17,7 @@ export default class MainPage extends React.Component {
     return (
       <React.Fragment>
         <div className="mainpage-container wrapper">
-          {console.log("This is main page")}
+          {/* {console.log("This is main page")} */}
           <h2>Search Books Based on Who You Lent Them To</h2>
           <input
             onChange={e => this.handleSearchFilter(e)}

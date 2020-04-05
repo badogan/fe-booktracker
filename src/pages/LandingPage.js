@@ -5,7 +5,7 @@ export default class LandingPage extends React.Component {
     return (
       <React.Fragment>
         <div className="landingpage-container wrapper">
-          {console.log("This is landing page")}
+          {/* {console.log("This is landing page")} */}
           <div className="landingpage-sub-1">
             <div className="landingpage-mainmessage">
               <h1>Keep track of your books_</h1>

@@ -72,11 +72,7 @@ const patchWithAuth = (url, obj) => {
 //   );
 // };
 
-const UserSignIn = userSignInObject => {
-  console.log('URL_userSignin IS: ', URL_userSignin)
-  console.log('process.env.REACT_APP_BE_API_URL IS: ', process.env.REACT_APP_BE_API_URL)
-  // console.log('REACT_APP_BE_API_URL IS: ', REACT_APP_BE_API_URL)
-  
+const UserSignIn = userSignInObject => {  
   return postSimple(URL_userSignin, userSignInObject).then(response =>
     response.json()
   );
@@ -84,7 +80,6 @@ const UserSignIn = userSignInObject => {
 
 const getAllBooks = userId => {
   const url = `${PART1_URL_Books}${userId}${PART2_URL_Books}`;
-  console.log("url IS: ", url);
   return getWithAuth(url).then(response => response.json());
 };
 

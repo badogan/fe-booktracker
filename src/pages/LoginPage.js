@@ -16,7 +16,6 @@ export default class LoginPage extends React.Component {
       password: this.state.password
     });
     if (result.status === "success") {
-      console.log(result);
       localStorage.token = result.token;
       this.props.updateUser(result.data.user);
       // this.props.history.push("/main")
@@ -27,7 +26,7 @@ export default class LoginPage extends React.Component {
     return (
       <React.Fragment>
         <div className="loginpage-container wrapper">
-          {console.log("This is login page")}
+          {/* {console.log("This is login page")} */}
           <div className="loginpage-sub-1">
             <div className="loginpage-welcome">
               <h1>Welcome back!</h1>
