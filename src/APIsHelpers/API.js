@@ -1,6 +1,8 @@
 // const URL_userSignup = "http://localhost:3003/signup";
-const URL_userSignin = "http://127.0.0.1:5000/api/v1/users/login";
-const PART1_URL_Books = "http://127.0.0.1:5000/api/v1/users/";
+// const URL_userSignin = "http://127.0.0.1:5000/api/v1/users/login";
+const URL_userSignin = `${process.env.REACT_APP_BE_API_URL}/api/v1/users/login`
+const PART1_URL_Books = `${process.env.REACT_APP_BE_API_URL}/api/v1/users/`
+// const PART1_URL_Books = "http://127.0.0.1:5000/api/v1/users/";
 const PART2_URL_Books = "/books";
 
 const postSimple = (url, obj) => {
@@ -71,6 +73,10 @@ const patchWithAuth = (url, obj) => {
 // };
 
 const UserSignIn = userSignInObject => {
+  console.log('URL_userSignin IS: ', URL_userSignin)
+  console.log('process.env.REACT_APP_BE_API_URL IS: ', process.env.REACT_APP_BE_API_URL)
+  // console.log('REACT_APP_BE_API_URL IS: ', REACT_APP_BE_API_URL)
+  
   return postSimple(URL_userSignin, userSignInObject).then(response =>
     response.json()
   );
