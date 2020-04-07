@@ -6,6 +6,7 @@ import API from "../src/APIsHelpers/API";
 
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 import MainPage from "./pages/MainPage";
 import ShowPage from "./pages/ShowPage";
 import Header from "./components/Header";
@@ -75,6 +76,21 @@ class App extends React.Component {
               );
             }}
           />
+
+          <Route
+            exact
+            path="/signup"
+            render={routerProps => {
+              return (
+                <SignupPage
+                  {...routerProps}
+                  user={this.state.user}
+                  updateUser={this.updateUser}
+                />
+              );
+            }}
+          />
+
           <Route
             exact
             path="/main"

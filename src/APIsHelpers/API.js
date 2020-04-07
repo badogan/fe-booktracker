@@ -1,6 +1,7 @@
 // const URL_userSignup = "http://localhost:3003/signup";
 // const URL_userSignin = "http://127.0.0.1:5000/api/v1/users/login";
 const URL_userSignin = `${process.env.REACT_APP_BE_API_URL}/api/v1/users/login`
+const URL_userSignup = `${process.env.REACT_APP_BE_API_URL}/api/v1/users/signup`
 const PART1_URL_Books = `${process.env.REACT_APP_BE_API_URL}/api/v1/users/`
 // const PART1_URL_Books = "http://127.0.0.1:5000/api/v1/users/";
 const PART2_URL_Books = "/books";
@@ -78,6 +79,12 @@ const UserSignIn = userSignInObject => {
   );
 };
 
+const UserSignup = userSignupObject => {  
+  return postSimple(URL_userSignup, userSignupObject).then(response =>
+    response.json()
+  );
+};
+
 const getAllBooks = userId => {
   const url = `${PART1_URL_Books}${userId}${PART2_URL_Books}`;
   return getWithAuth(url).then(response => response.json());
@@ -100,6 +107,7 @@ const deleteBook = (userId, bookId) => {
 
 export default {
   UserSignIn,
+  UserSignup,
   getAllBooks,
   patchBook,
   addBook,

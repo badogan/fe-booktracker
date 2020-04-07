@@ -30,7 +30,7 @@ export default class LandingPage extends React.Component {
             </button>
             <button
               className="landingpage-button-login"
-              onClick={() => this.props.history.push("/login")}
+              onClick={() => this.props.history.push("/signup")}
             >
               Signup
             </button>
